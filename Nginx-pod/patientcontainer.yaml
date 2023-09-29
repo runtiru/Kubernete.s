@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dedone
+  labels:
+    app: nothing
+spec:
+  containers:
+    - name: hello-pod
+      image: alpine
