@@ -1,0 +1,13 @@
+apiVersion: vi
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx
+spec:
+  type: ClusterIP
+  selector: 
+    app: nginx
+  ports:
+    - targetPort: 80
+      port: 80
