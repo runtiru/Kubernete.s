@@ -16,7 +16,7 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels: 
-      app: nopcommrece
+      app: nop
   template:
     metadata:
       labels:
