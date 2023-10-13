@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nop-deployment
+  labels:
+    app: mynop
+    purpose: deployment
+spec:
+  replicas: 2
+  minReadySeconds: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 25%
+  selector:
+    matchLabels: 
+      app: nopcommrece
+  template:
+    metadata:
+      labels:
+        app: nop
+        version: 
+    spec:
+      containers:
+        - name: mynopcommerce
+          image: dockertiru/nopcommerce2309
+          ports:
+            - containerPort: 5000
+              protocol: TCP
